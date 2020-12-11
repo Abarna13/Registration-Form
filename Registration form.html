@@ -1,0 +1,336 @@
+<!DOCTYPE html> 
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta charset="utf-8" /> 
+<title>Registration Form</title> 
+<!-- Latest compiled and minified CSS --> 
+<link rel="stylesheet"  
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> <!-- jQuery library --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- Latest compiled JavaScript --> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+<script>  
+function check() 
+{ 
+xyz.innerText=""; 
+var name1=document.getElementById("uname").value;  
+if(name1.length<1) 
+{ 
+xyz.innerText="Field should be filled";  
+f1=0 
+} 
+var re=new RegExp("^[0-9]");  
+if(re.test(name1))
+{ 
+xyz.innerText="User name should not start with a digit";  
+f1=0 
+} 
+} 
+function check1() 
+{ 
+abc.innerText=""; 
+var passone = document.getElementById("password");  
+var invalid = " "; // Invalid character is a space 
+var minLength = 6; // Minimum length 
+//If passone invalid  
+if(passone.value == "") 
+{ 
+abc.innerText="Field should be filled";  
+f1=0 
+} 
+else if(passone.value.length < minLength) 
+{ 
+abc.innerText='Your password must be at least ' + minLength + ' characters long. Try again';  f1=0 
+} 
+else if(passone.value.indexOf(invalid) > -1) 
+{ 
+abc.innerText="Sorry, spaces are not allowed.";  
+f1=0 
+}
+else { } 
+} 
+function check2() 
+{ 
+cde.innerText=""; 
+var name2=document.getElementById("cpd").value; var name1=document.getElementById("password").value;  if(name2.length<1) 
+{ 
+cde.innerText="Field should be filled";  
+f1=0 
+} 
+if(name1!=name2) 
+{ 
+cde.innerText="password missmatch";  
+f1=0 
+} 
+} 
+function email() 
+{ 
+def.innerText=""; 
+var name3=document.getElementById("mailid").value;  if(name3.length<1) 
+{ 
+def.innerText="filled should be filled";  
+f1=0;
+} 
+var re2=new RegExp("^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,4}$");  if(!re2.test(name3)) 
+{ 
+def.innerText="invalid id";  
+f1=0; 
+} 
+} 
+function check3() 
+{ 
+efg.innerText=""; 
+var name1=document.getElementById("add").value;  if(name1.length<1) 
+{ 
+efg.innerText="Field should be filled";  
+f1=0; 
+} 
+} 
+function check4() 
+{ 
+fgh.innerText=""; 
+var name1=document.getElementById("line1").value;  if(name1.length<1) 
+{ 
+fgh.innerText="Field should be filled";  
+f1=0; 
+}
+} 
+function check5() 
+{ 
+ghi.innerText=""; 
+var name1=document.getElementById("line2").value;  if(name1.length<1) 
+{ 
+ghi.innerText="Field should be filled";  
+f1=0; 
+} 
+} 
+function check6() 
+{ 
+hij.innerText=""; 
+var name6=document.getElementById("pin").value;  if(name6.length<1) 
+{ 
+hij.innerText="field should be filled";  
+f1=0; 
+} 
+var ae=new RegExp("^[0-9]+$");  
+if(!ae.test(name6)) 
+{ 
+hij.innerText="Field should contain only number";  f1=0;}} 
+function showit()
+{ if(f1==0) 
+alert("Your Registeration was not successful");  
+else 
+alert("Your registeration was successful"); 
+} 
+function clear() 
+{ 
+document.f1.uname.value="";  
+document.f1.pass1.value="";  
+document.f1.pass2.value="";  
+document.f1.mail.value="";  
+document.f1.addr.value="";  
+document.f1.l1.value="";  
+document.f1.l2.value="";  
+document.f1.code.value="";  
+document.f1.nat.value="";  
+document.f1.M.value="";  
+document.f1.F.value=""; 
+} 
+function display() 
+{ 
+DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=300,height=200')  message = "<ul><li><b>NAME: </b>" + document.f1.uname.value; message += "<li><b>ADDRESS: </b>" + document.f1.addr.value;  message += "<li><b>PINCODE: </b>" + document.f1.code.value;  message += "<li><b>E-MAIL: </b>" + document.f1.mail.value + "</ul>";  DispWin.document.write(message);
+} 
+</script> 
+<style>  
+body { 
+background-color: cyan; 
+} 
+</style> 
+</head> 
+<body > 
+<form name="f1"> 
+<center> 
+<h1> Registration Form</h1><br> 
+<table> 
+<tr> 
+<td><b>Username </b></td> 
+<td><input type="text" name="uname" id="uname" onBlur="check()" 
+/></td> 
+<td><p id="xyz"></p></td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td>
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td><b>Password </b></td> 
+<td><input type="password" name="pass1" id="password"  onblur="check1()" /></td> 
+<td><p id="abc"></p></td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td><b>Confirm Password </b></td> 
+<td><input type="password" name="pass2" id="cpd" onblur="check2()" /></td>
+<td><p id="cde"></p></td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td><b>Sex </b></td> 
+<td><input type="radio" name="m" value="male" onblur="check()" 
+/>MALE</td> 
+<td><input type="radio" name="m" value="female" onblur="check()" />FEMALE</td> 
+<td><p id="e"></p></td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td>
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td><b>Indian</b></td> <td> 
+<select name="nat"> <option></option> <option>YES</option> 
+<option>NO</option> </select> 
+</td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td> 
+<p></p>
+</td> 
+</tr> 
+<tr> 
+<td><b>Email-id </b></td> 
+<td><input type="text" name="mail" id="mailid" onblur="email()" 
+/></td> 
+<td><p id="def"></p></td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td>
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td> 
+<p><b>ADDRESS</b></p> 
+</td> 
+<td><input type="text" name="addr" id="add" onblur="check3()" 
+/></td> 
+<td><p id="efg"></p></td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td><b>Line 1 </b></td> 
+<td><input type="text" id="line1" onblur="check4()" /></td> <td><p id="fgh"></p></td> 
+</tr>
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td><b>Line 2 </b></td> 
+<td><input type="text" id="line2" onblur="check5()" /></td> <td><p id="ghi"></p></td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr>
+<tr> 
+<td><b>Zipcode </b></td> 
+<td><input type="text" name="code" id="pin" onblur="check6()" 
+/></td> 
+<td><p id="hij"></p></td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr> 
+<td> 
+<p></p> 
+</td> 
+</tr> 
+<tr>
+<td><input type="Submit" id="submit" onblur="showit()" /></td> <td><p id="ijk"></p></td> 
+</tr> 
+<tr> 
+<td></td> 
+<td><input type="reset" value="Reset" onclick="clear()" /></td> <td><p id="jkl"></p></td> 
+</tr> 
+<tr> 
+<td> 
+<input type="BUTTON" value="Display" onclick="display()" /> </td> 
+</tr> 
+</table> 
+</center> 
+</form> 
+</body> 
+</html> 
